@@ -1,0 +1,6 @@
+<% @artists.each do |artist| %>
+<p> <%= link_to artist.name, artist_path(artist) %></p>
+<% end %>
+
+<%= link_to "Ajouter un tatoueur", new_artist_path %>
+<%= link_to "Précedent", root_path %>
