@@ -3,6 +3,9 @@
 <p><%= @artist.description %></p>
 <p><%= @artist.technique %></p>
 
+<%= render "reviews/reviewsform", artist: @artist, review: @review %>
+<%= render 'reviews/review' %>
+
 <%= link_to "Modifier", edit_artist_path(@artist) %>
 <%= link_to "Supprimer", artist_path(@artist), method: :delete, data: { confirm: "Etes-vous sûr.e de supprimer cet.te artiste ?" } %>
 <%= link_to "Précedent", artists_path %>

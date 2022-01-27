@@ -1,0 +1,19 @@
+<%= simple_form_for [@artist, @review] do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <p>Laissez un avis</p>
+
+    <% Review::AUTHORIZED_RATINGS.each do |index| %>
+      <i id="<%= index %>" class="review-rating far fa-star"></i>
+    <% end %>
+
+    <%= f.input :rating, as: :hidden  %>
+    <%= f.input :comment, label: 'Commentaire'%>
+  </div>
+  
+  <div class="form-actions d-flex justify-content-center">
+    <%= f.button :submit, 'Laisser votre avis !' %>
+  </div>
+<% end %>

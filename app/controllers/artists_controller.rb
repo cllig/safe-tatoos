@@ -7,6 +7,9 @@ class ArtistsController < ApplicationController
   end
 
   def show
+    @reviews = @artist.reviews
+    @review = Review.new
+    @average_rating = @reviews.average(:rating)
   end
 
   def new
