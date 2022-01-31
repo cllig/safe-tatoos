@@ -3,7 +3,17 @@ class ArtistsController < ApplicationController
   before_action :set_artists, only: [:show, :edit, :update, :destroy]
 
   def index
-    @artists = Artist.all
+    if params[:query].present?
+      sql_query = " \
+        movies.name ILIKE :query \
+        OR movies.city ILIKE :query \
+        OR directors.technique ILIKE :query \
+        OR directors.description ILIKE :query \
+      "
+      @artists = Artist.joins(:name, :city, :technique, :description).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @artists = Artist.all
+    end
   end
 
   def show
