@@ -1,0 +1,34 @@
+.footer {
+  background: $green-sheen;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  padding: 0px 50px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-top: auto;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  color: $pink;
+  justify-content: space-around;
+  width: 234px;
+}
+.footer-links a {
+  color: $pink;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+  color: $charcoal;
+}
+.footer .fa-heart {
+  color: $green-sheen;
+}

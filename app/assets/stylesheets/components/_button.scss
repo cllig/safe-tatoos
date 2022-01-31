@@ -1,0 +1,14 @@
+.btn-blue {
+  background-color: $blue-pine;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.btn-blue:hover {
+  background-color: $pink;
+}
+
+a.btn.btn-blue {
+  font-size: 30px;
+  padding: 0px 31px;
+}
