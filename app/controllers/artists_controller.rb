@@ -4,13 +4,8 @@ class ArtistsController < ApplicationController
 
   def index
     if params[:query].present?
-      sql_query = " \
-        movies.name ILIKE :query \
-        OR movies.city ILIKE :query \
-        OR directors.technique ILIKE :query \
-        OR directors.description ILIKE :query \
-      "
-      @artists = Artist.joins(:name, :city, :technique, :description).where(sql_query, query: "%#{params[:query]}%")
+      sql_query = "name ILIKE :query OR city ILIKE :query OR technique ILIKE :query"
+      @artists = Artist.where(sql_query, query: "%#{params[:query]}%")
     else
       @artists = Artist.all
     end
