@@ -15,14 +15,17 @@ class ArtistsController < ApplicationController
     @reviews = @artist.reviews
     @review = Review.new
     @average_rating = @reviews.average(:rating)
+    authorize @artist
   end
 
   def new
     @artist = Artist.new
+    authorize @artist
   end
 
   def create
     @artist = Artist.new(params_artist)
+    authorize @artist
     if @artist.save
       redirect_to artist_path(@artist)
     else
@@ -55,5 +58,6 @@ class ArtistsController < ApplicationController
 
   def set_artists
     @artist = Artist.find(params[:id])
+    authorize @artist
   end
 end

@@ -16,6 +16,9 @@
     <% end %>
   </div>
 
+<% if policy(Artist).create? %>
   <%= link_to "Ajouter un tatoueur", new_artist_path %>
+<% end %>
+
   <%= link_to "Précedent", root_path %>
 </div>
