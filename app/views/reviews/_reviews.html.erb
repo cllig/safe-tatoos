@@ -1,0 +1,21 @@
+<% @reviews.each do |review| %>
+  <h5><%= review.user.first_name %></h5>
+  <% Review::AUTHORIZED_RATINGS.each do |number| %>
+    <% if review.rating %>
+      <i class="fa<%= (number > review.rating) ? 'r' : 's' %> fa-star"></i>
+    <% else %>
+      <i class="far fa-star"></i>
+    <% end %>
+  <% end %>
+    <p><%= review.comment %></p>
+
+  <% if policy(review).edit? %>
+    <%= link_to "Modifier", edit_artist_review_path(@artist, review) %>
+  <% end %>
+
+
+  <% if policy(review).destroy? %>
+    <%= link_to "Supprimer", review_path(review), method: :delete, data: { confirm: "Etes-vous sûr.e de supprimer cet avis ?" } %>
+  <% end %>
+
+<% end  %>

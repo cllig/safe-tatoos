@@ -16,6 +16,8 @@ class ArtistsController < ApplicationController
     @review = Review.new
     @average_rating = @reviews.average(:rating)
     authorize @artist
+    authorize @reviews
+    authorize @review
   end
 
   def new

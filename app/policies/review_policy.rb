@@ -1,9 +1,9 @@
-class ArtistPolicy < ApplicationPolicy
+class ReviewPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
-    # def resolve
-    #   scope.all
-    # end
+    def resolve
+      scope.all
+    end
   end
 
   def show?
@@ -11,15 +11,15 @@ class ArtistPolicy < ApplicationPolicy
   end
 
   def create?
-    user.admin == true
+    return true
   end
 
   def update?
     # raise
-    user.admin == true
+    record.user == user || user.admin?
   end
 
   def destroy?
-    user.admin == true
+    record.user == user || user.admin?
   end
 end
