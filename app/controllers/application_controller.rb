@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   # after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
-# rescue Pundit::NotAuthorizedError, redirect_to root_path(notice: "Vous n'êtes pas authorisé.e à réaliser cette action.")
+  # rescue Pundit::NotAuthorizedError, redirect_to root_path(notice: "Vous n'êtes pas authorisé.e à réaliser cette action.")
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])

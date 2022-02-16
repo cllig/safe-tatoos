@@ -3,8 +3,9 @@
 <p><%= @artist.description %></p>
 <p><%= @artist.technique %></p>
 
+<%= render 'reviews/reviews' %>
 <%= render "reviews/reviewsform", artist: @artist, review: @review %>
-<%= render 'reviews/review' %>
+
 
 <% if policy(Artist).edit? %>
 <%= link_to "Modifier", edit_artist_path(@artist) %>

@@ -6,10 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Review.destroy_all
+User.destroy_all
 Artist.destroy_all
 puts "base de donée nettoyée"
 
-Artist.create(name: "saltymommy", city: "Lille", description: "Tatoue les peaux foncées, est LGBTQ+ Safe, Demande les pronoms, Tatoue les cicatrices, Tatoue les cicatrices de m*tilation", technique: "Machine", photo: "https://images.unsplash.com/photo-1454329030972-00583f5f051f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1161&q=80", avatar: "https://cdn-icons.flaticon.com/png/512/3220/premium/3220395.png?token=exp=1643637895~hmac=5a67d61ba72ac5ecfcee1550a415a299")
+artist1 = Artist.create(name: "saltymommy", city: "Lille", description: "Tatoue les peaux foncées, est LGBTQ+ Safe, Demande les pronoms, Tatoue les cicatrices, Tatoue les cicatrices de m*tilation", technique: "Machine", photo: "https://images.unsplash.com/photo-1454329030972-00583f5f051f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1161&q=80", avatar: "https://cdn-icons.flaticon.com/png/512/3220/premium/3220395.png?token=exp=1643637895~hmac=5a67d61ba72ac5ecfcee1550a415a299")
 Artist.create(name: "salucafarte", city: "Rennes", description: "Tatoue les peaux foncées, est LGBTQ+ Safe, Respecte les pronoms ( = ne demande pas mais une fois précisés, les pronoms sont respectés), Dispose d'une pièce calme ou pouvant l'être (lumière tamisée, pas de musique, etc)", technique: "Machine", photo: "https://images.unsplash.com/photo-1611072243876-fd7d8c29490f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80", avatar: "https://cdn-icons.flaticon.com/png/512/2423/premium/2423887.png?token=exp=1643637899~hmac=25d6976aaa0cee2558d9d487d82ff964")
 Artist.create(name: "saugre_nuitee_ttt", city: "Montpellier", description: "Dispose d'un endroit pour tatouer en accès PMR, est LGBTQ+ Safe, Demande les pronoms, Respecte les pronoms ( = ne demande pas mais une fois précisés, les pronoms sont respectés), Peux tatouer dans une pièce fermée, sans vis à vis", technique: "Machine", photo: "https://images.unsplash.com/photo-1475868530036-7e1f42b9c91c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=803&q=80", avatar: "https://cdn-icons-png.flaticon.com/512/949/949644.png")
 Artist.create(name: "_labelette_tattoo", city: "Mimizan", description: "", technique: "Machine", photo: "https://images.unsplash.com/photo-1628103497800-6f7bc6d6ed6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=742&q=80", avatar: "https://cdn-icons.flaticon.com/png/512/2423/premium/2423887.png?token=exp=1643637899~hmac=25d6976aaa0cee2558d9d487d82ff964")
@@ -22,5 +23,16 @@ Artist.create(name: "enfant.du.malheur", city: "Lille", description: "Tatoue les
 Artist.create(name: "enna.mama", city: "Lille", description: "Tatoue les peaux foncées, est LGBTQ+ Safe, Demande les pronoms, Respecte les pronoms ( = ne demande pas mais une fois précisés, les pronoms sont respectés), Tatoue de manière Vegan, Tatoue les cicatrices, Tatoue les cicatrices de m*tilation, Peux tatouer dans une pièce fermée, sans vis à vis, Dispose d'une pièce calme ou pouvant l'être (lumière tamisée, pas de musique, etc)", technique: "Machine", photo:"https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80", avatar:"https://cdn-icons-png.flaticon.com/512/2945/2945328.png")
 Artist.create(name: "koresanzoku", city: "Paris", description: "est LGBTQ+ Safe, Peux tatouer dans une pièce fermée, sans vis à vis, Dispose d'une pièce calme ou pouvant l'être (lumière tamisée, pas de musique, etc), je ne suis pas certaine mais je pense qu'elle est ok pour vegan &cicatrices", technique: "Machine", photo:"https://images.unsplash.com/photo-1482375702222-03a768d5ea3c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80", avatar:"https://cdn-icons.flaticon.com/png/512/2423/premium/2423917.png?token=exp=1643638892~hmac=0838e90ad2ce83cf2f715944027144cc")
 Artist.create(name: "la.chauve.tattoo", city: "Montreuil", description: "Tatoue les peaux foncées, est LGBTQ+ Safe, Respecte les pronoms ( = ne demande pas mais une fois précisés, les pronoms sont respectés), Tatoue de manière Vegan, Tatoue les cicatrices, Tatoue les cicatrices de m*tilation, Peux tatouer dans une pièce fermée, sans vis à vis, Dispose d'une pièce calme ou pouvant l'être (lumière tamisée, pas de musique, etc)", technique: "Machine", photo:"https://images.unsplash.com/photo-1586243287039-23f4c8e2e7ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80", avatar:"https://cdn-icons-png.flaticon.com/512/3284/3284076.png")
-
 puts "artistes crées"
+
+user1 = User.create(first_name: "Claire", last_name: "fkzgfz", email: "claire-du-12@laposte.net", password: "aaaaaa", admin: true)
+user2 = User.create(first_name: "Lola", last_name: "fkzggzgefz", email: "claire.lignon@gmail.com", password: "aaaaaa", admin: false)
+puts "users créés"
+
+Review.create(rating: 4, comment: "trop cool", artist: artist1, user: user1)
+Review.create(rating: 3, comment: "trop waouh", artist: artist1, user: user2)
+Review.create(rating: 5, comment: "trop cool", artist: artist1, user: user2)
+Review.create(rating: 5, comment: "trop bien", artist: artist1, user: user2)
+Review.create(rating: 4, comment: "nice", artist: artist1, user: user1)
+Review.create(rating: 3, comment: "trop cool", artist: artist1, user: user2)
+puts "reviews créées"
